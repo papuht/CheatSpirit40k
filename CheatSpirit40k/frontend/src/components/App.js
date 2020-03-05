@@ -12,7 +12,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch("api/unit")
+    fetch("api/units")
       .then(response => {
         if (response.status > 400) {
           return this.setState(() => {
@@ -37,7 +37,27 @@ class App extends Component {
         {this.state.data.map(unit => {
           return (
             <li key={unit.id}>
-              {unit.name}
+              <p>Name : {unit.Name}</p>
+			  <p>Move: {unit.Move}</p>
+			  <p>WS: {unit.WS}</p>
+			  <p>BS: {unit.BS}</p>
+			  <p>Strength: {unit.Strength}</p>
+			  <p>Toughness: {unit.Toughness}</p>
+			  <p>Wounds: {unit.Wounds}</p>
+			  <p>Attack: {unit.Attack}</p>
+			  <p>Leadership: {unit.Leadership}</p>
+			  <p>Armor: {unit.Armor}</p>
+			  <p>Invulnerable save: {unit.Inv}</p>
+			  <p>Feel No Pain: {unit.FNP}</p>
+			  <p>Type: {unit.Type}</p>
+			  <p>Faction: {unit.Faction}</p>
+			  <p>Warlord: {unit.Warlord}</p>
+			  <p>Points: {unit.Points}</p>
+			  <p>Min: {unit.Min}</p>
+			  <p>Max: {unit.Max}</p>
+			  
+			  
+			  
             </li>
           );
         })}

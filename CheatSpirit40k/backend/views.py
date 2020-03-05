@@ -1,12 +1,16 @@
 from django.shortcuts import render
 
 
-from .models import Unit
-from .serializers import UnitSerializer
+from .models import Units, RW
+from .serializers import UnitSerializer, RWSerializer
 from rest_framework import generics
 
 class UnitListCreate(generics.ListCreateAPIView):
-    queryset = Unit.objects.all()
+    queryset = Units.objects.all()
     serializer_class = UnitSerializer
+    
+class RWListCreate(generics.ListCreateAPIView):
+    queryset = RW.objects.all()
+    serializer_class = RWSerializer
 
 # Create your views here.
